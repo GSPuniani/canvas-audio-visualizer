@@ -30,7 +30,7 @@ function drawBoard(){
     ctx.strokeStyle = "rgb(0,250,0)";
     for (var x = 0; x < 500; x += 10) {
         for (var y = 0; y < 500; y += 10) {
-           ctx.strokeRect(x+10, y+10, 10, 10); 
+           ctx.strokeRect(x, y, 10, 10); 
         }
     }
 }
@@ -68,8 +68,8 @@ function startAudio() {
 	
 	// Define a source sound file 
 	// You can replace this with your own file
-	// audio.src = '.bird-whistling-a.wav.icloud'
-	audio.src = 'log-sine-sweep.wav'
+	audio.src = 'bird-whistling-a.wav'
+	// audio.src = 'log-sine-sweep.wav'
 
 	// Make a new analyser
 	analyser = audioContext.createAnalyser()

@@ -23,6 +23,20 @@ const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
 
+// --------------------------------------------------------
+// Gridlines
+function drawBoard(){
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "rgb(0,250,0)";
+    for (var x = 0; x < 500; x += 10) {
+        for (var y = 0; y < 500; y += 10) {
+           ctx.strokeRect(x+10, y+10, 10, 10); 
+        }
+    }
+}
+
+
+
 // ----------------------------------------------------------
 // Buttons 
 const playButton = document.getElementById('button-play')
@@ -54,8 +68,8 @@ function startAudio() {
 	
 	// Define a source sound file 
 	// You can replace this with your own file
-	audio.src = 'bird-whistling-a.wav'
-	// audio.src = 'log-sine-sweep.wav'
+	// audio.src = '.bird-whistling-a.wav.icloud'
+	audio.src = 'log-sine-sweep.wav'
 
 	// Make a new analyser
 	analyser = audioContext.createAnalyser()
@@ -81,6 +95,8 @@ function render() {
 	const centerY = 500 / 2
 	const radius = 500 / 5
 	analyser.getByteFrequencyData(frequencyArray)
+
+	drawBoard();
 	
 	// Use one of the renderers below 
 	// radialRayRenderer(frequencyArray, ctx, centerX, centerY, radius)

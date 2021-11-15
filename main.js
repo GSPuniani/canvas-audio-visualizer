@@ -27,7 +27,7 @@ const ctx = canvas.getContext('2d')
 // Gridlines
 function drawBoard(){
     ctx.lineWidth = 2;
-    ctx.strokeStyle = "rgb(0,250,0)";
+    ctx.strokeStyle = "rgb(0,210,0)";
     for (var x = 0; x < 500; x += 10) {
         for (var y = 0; y < 500; y += 10) {
            ctx.strokeRect(x, y, 10, 10); 
